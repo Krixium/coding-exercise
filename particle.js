@@ -6,25 +6,25 @@ class Particle {
     this.lifespan = 255;
   }
 
-  tick() {
-    this.update();
-    this.display();
-  }
-
-  update() {
-    this.velocity.add(this.acceleration);
-    this.position.add(this.velocity);
-    this.lifespan -= 2;
-  }
-
-  display() {
-    stroke(200, this.lifespan);
-    strokeWeight(2);
-    fill(126, this.lifespan);
-    ellipse(this.position.x, this.position.y, 12, 12);
-  }
-
   isExpired() {
     return this.lifespan < 0;
   }
+}
+
+function drawParticle(p) {
+  stroke(200, p.lifespan);
+  strokeWeight(2);
+  fill(126, p.lifespan);
+  ellipse(p.position.x, p.position.y, 12, 12);
+}
+
+function updateParticle(p) {
+    p.velocity.add(p.acceleration);
+    p.position.add(p.velocity);
+    p.lifespan -= 2;
+}
+
+function tickParticle(p) {
+  updateParticle(p);
+  drawParticle(p);
 }
