@@ -25,7 +25,7 @@ function draw() {
   for (let i = 0; i < particles.length; i++) {
     // Increment the particle forward one step in time
     currentParticle = particles[i];
-    tickParticle(currentParticle);
+    currentParticle.tick();
 
     // If the particle is expired, remove it
     if (currentParticle.isExpired()) {
