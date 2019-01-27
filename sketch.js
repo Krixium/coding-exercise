@@ -33,6 +33,3 @@ function draw() {
     }
   }
 }
-
-// change it back to object oriented
-// explain function vs attributes
