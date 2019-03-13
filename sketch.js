@@ -1,35 +1,28 @@
+const canvasWidth = 800;
+const canvasHeight = 600;
+const black = 0;
+
 // array of particles
 let particles = [];
 
 // setup function
 // creates the canvas and an initial list of particles
 function setup() {
-  createCanvas(800, 600);
-  background(0);
+  createCanvas(canvasWidth, canvasHeight);
+  background(black);
 
-  // Loop 100 times
-  for (let i = 0; i < 10; i++) {
-    // Push a new particle to the end of the array
-    particles.push(new Particle(800 * 0.5, 600 * 0.2));
-  }
+  // 1. Loop 10 times
+    // 2. Add a new particle to the end of the list
 }
 
 function draw() {
-  // Push a new particle to the end of the array
-  particles.push(new Particle(800 * 0.5, 600 * 0.2));
+  // 3. Add a new particle to the end of the list
 
   // Draw the background
-  background(0);
+  background(black);
 
-  // Loop through all the particles
-  for (let i = 0; i < particles.length; i++) {
-    // Increment the particle forward one step in time
-    currentParticle = particles[i];
-    currentParticle.tick();
+  // 4. Repeat through all the particles
+    // 5. Move the particle forward one step in time
 
-    // If the particle is expired, remove it
-    if (currentParticle.isExpired()) {
-      particles.splice(i, 1);
-    }
-  }
+    // 6. If the particle is expired, remove it
 }
