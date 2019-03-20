@@ -24,8 +24,6 @@ function setup() {
 
 function draw() {
   // 1. Add a new particle to the end of the list
-  let newParticle = new Particle(centerX, centerY)
-  particles.push(newParticle)
 
   // Draw the background
   background(black)
@@ -39,11 +37,7 @@ function draw() {
     let particle = particles[i];
 
     // 2. Move the particle forward one step in time
-    particle.tick()
 
     // 3. If the particle is expired, remove it
-    if (particle.isExpired()) {
-      particles.splice(i, 1)
-    }
   }
 }
