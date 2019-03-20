@@ -1,22 +1,41 @@
+let gravity = {
+  x: 0,
+  y: 0.05
+}
+
 class Particle {
   constructor(xPos, yPos) {
     // attributes
-    this.acceleration = createVector(0, 0.05);
+    this.acceleration = createVector(gravity.x, gravity.y);
     this.velocity = createVector(random(-1, 1), random(-1, 0));
     this.position = createVector(xPos, yPos);
     this.lifespan = 255;
+    this.strokeColor = {
+      r: 200,
+      g: 200,
+      b: 200
+    }
+    this.fillColor = {
+      r: 200,
+      g: 200,
+      b: 200
+    }
+    this.size = {
+      x: 12,
+      y: 12
+    }
   }
 
   // functions
   isExpired() {
     return this.lifespan < 0;
   }
-  
+
   draw() {
-    stroke(200, this.lifespan);
+    stroke(this.strokeColor.r, this.strokeColor.g, this.strokeColor.b, this.lifespan);
     strokeWeight(2);
-    fill(126, this.lifespan);
-    ellipse(this.position.x, this.position.y, 12, 12);
+    fill(this.fillColor.r, this.fillColor.g, this.fillColor.b, this.lifespan);
+    ellipse(this.position.x, this.position.y, this.size.x, this.size.y);
   }
 
   update() {
